@@ -1,21 +1,21 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { ThemeProvider } from 'emotion-theming'
+
+import Layout from '../Layout'
+import SEO from '../components/seo'
+import Profil from '../components/Profil'
+import theme from '../theme'
+import Technologies from '../components/Technologies'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <SEO title="Home" keywords={[`thomas`, `bayet`, `react`, `vue`, `js`, `front`, `font-end`, `developper`, `freelance`, `javascript`]} />
+      <Profil />
+      <Technologies />
+    </Layout>
+  </ThemeProvider>
 )
 
 export default IndexPage
