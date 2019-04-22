@@ -1,16 +1,22 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+
+export const ProfilTransitionStyle = styled.div`
+  margin-top: -1px;
+  flex: 1 1 auto;
+  height: 200px;
+  background-image: ${({ theme }) => `url("data:image/svg+xml;utf8, <svg width='64' height='16' xmlns='http://www.w3.org/2000/svg'><path d='M0 16 C52 16 32 0 64 0 L64 0 L58 0 L0 0 Z' fill='${theme.primaryColor}' /></svg>")`};
+  background-size: 100% 200px;
+  background-repeat: no-repeat;
+  background-position: top;
+`
 
 const ProfilStyle = styled.div`
   flex: 1 1 auto;
-  min-height: calc(100vh - 80px);
+  padding-bottom: 100px;
+  z-index: 1;
   color: ${({ theme }) => theme.onPrimary};
-  background-image: ${({ theme }) => `url("data:image/svg+xml;utf8, <svg width='64' height='64' xmlns='http://www.w3.org/2000/svg'><path d='M0 64 C52 64 32 48 64 48 L64 32 L64 0 L0 0 Z' fill='${theme.primaryColor}' /></svg>")`};
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: ${({ theme }) => theme.primaryColor};
   text-shadow: 1px 1px 3px ${({ theme }) => theme.primaryColor}, -1px -1px 3px ${({ theme }) => theme.primaryColor}, 1px -1px 3px ${({ theme }) => theme.primaryColor}, -1px 1px 3px ${({ theme }) => theme.primaryColor};
-
   & > div:nth-of-type(1) {
     padding: 10vh;
     display: flex;

@@ -18,15 +18,13 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query LayoutDataQuery {
-        dataJson {
-          layout {
-            name,
-            birthdate
-          }
+        layoutJson {
+          name,
+          birthdate
         }
       }
     `}
-    render={({ dataJson: { layout: { name, birthdate } } }) => (
+    render={({ layoutJson: { name, birthdate } }) => (
       <>
         <Global
           styles={css`

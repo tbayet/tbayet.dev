@@ -1,0 +1,52 @@
+[
+  {
+    "note": [5, 5, 5],
+    "icon": "html",
+    "name": "HTML"
+  },
+  {
+    "note": [4.5, 5, 5],
+    "icon": "css",
+    "name": "CSS"
+  },
+  {
+    "note": [4.5, 4, 5],
+    "icon": "react",
+    "name": "React"
+  },
+  {
+    "note": [4.5, 4, 5],
+    "icon": "vuejs",
+    "name": "Vue"
+  },
+  {
+    "note": [4, 3.5, 4.5],
+    "icon": "nodejs",
+    "name": "Node"
+  },
+  {
+    "note": [3, 5, 4.5],
+    "icon": "git",
+    "name": "Git"
+  },
+  {
+    "note": [3.5, 3, 3.5],
+    "icon": "mysql",
+    "name": "MySQL"
+  },
+  {
+    "note": [4.5, 3, 4],
+    "icon": "redux",
+    "name": "Redux"
+  },
+  {
+    "note": [4, 3.5, 4.5],
+    "icon": "python",
+    "name": "Python"
+  },
+  {
+    "note": [4.5, 5, 5],
+    "icon": "c",
+    "name": "C"
+  }
+]

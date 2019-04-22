@@ -9,6 +9,9 @@ const TechnologiesStyle = styled.div`
   display: flex;
   justify-content: center;
   & #cards_container {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
     padding: 5%;
     flex: 1 1 auto;
     display: flex;
@@ -16,10 +19,27 @@ const TechnologiesStyle = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
-    overflow: hidden;
     background: url(${({ background }) => background});
     background-size: cover;
     background-attachment: fixed;
+    transition: flex 0.2s linear;
+    ${({ video }) => video && css`
+      flex: 0 0 0;
+      padding: 0;
+    `}
+  }
+  & .mac_video {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    & > video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   & .card {
@@ -30,7 +50,8 @@ const TechnologiesStyle = styled.div`
     perspective: 1000px;
     transition: transform 0.3s;
     &:hover {
-      transform: scale(1.1, 1.1);
+      transform: scale(1.02, 1.02) rotate(10deg);
+      cursor: pointer;
     }
   }
 
@@ -76,21 +97,33 @@ const TechnologiesStyle = styled.div`
 
   }
   & #mac_bottom {
+    display: flex;
     position: relative;
     background-color: #bfbfbf;
     height: 110px;
     border-radius: 0px 0px 30px 30px;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: radial-gradient(#404040 0px, #404040 12px, #8c8c8c 14px, #8c8c8c 19px, #404040 21px, #404040 30px, transparent 32px);
+    justify-content: center;
+    align-items: center;
+    & > button {
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+      border: none;
+      box-shadow: 0 2px #202020;
+      height: 55px;
+      width: 55px;
+      background: radial-gradient(#404040 12px, #8c8c8c 14px, #8c8c8c 19px, #404040 21px, #404040 30px, transparent 32px);
       background-position: center center;
       background-size: 80px 80px;
       background-repeat: no-repeat;
+      border-radius: 50%;
+      &:hover {
+        cursor: pointer;
+        background: radial-gradient(#505050 12px, #acacac 14px, #acacac 19px, #505050 21px, #505050 30px, transparent 32px);
+      }
+      &:active {
+        box-shadow: inset 0px 2px #202020;
+      }
     }
   }
 

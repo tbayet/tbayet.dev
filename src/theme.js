@@ -15,19 +15,19 @@ const theme = {
   secondaryColorActive: '#1d1d29',
   onSecondary: '#F4F6F5',
   fontPrimary: {
-    regular: 'regular 1rem Lato,sans-serif',
-    bold: 'bold 1rem Lato,sans-serif',
-    light: 'lighter 1rem Lato,sans-serif'
+    regular: 'regular 1rem Lato, sans-serif',
+    bold: 'bold 1rem Lato, sans-serif',
+    light: 'lighter 1rem Lato, sans-serif'
   },
   fontSecondary: {
-    regular: 'arial,sans-serif',
-    bold: 'arial,sans-serif',
-    light: 'arial,sans-serif'
+    regular: 'regular 1rem arial, sans-serif',
+    bold: 'bold 1rem arial, sans-serif',
+    light: 'lighter 1rem arial, sans-serif'
   },
   fontTertiary: {
-    regular: 'Georgia,serif',
-    bold: 'Georgia,serif',
-    light: 'Georgia,serif'
+    regular: 'regular 1rem Georgia, serif',
+    bold: 'bold 1rem Georgia, serif',
+    light: 'lighter 1rem Georgia, serif'
   },
   font48: '4rem',
   font43: '3.6rem',
@@ -59,5 +59,4 @@ const theme = {
   border: 'solid 5px #000000',
   headerSize: '80px'
 }
-
 export default theme

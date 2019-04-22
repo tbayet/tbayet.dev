@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import ProfilStyle from './style'
+import ProfilStyle, { ProfilTransitionStyle } from './style'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -28,21 +28,24 @@ const Profil = () =>
       }
     `}
     render={({ placeholderImage }) =>
-      <ProfilStyle>
-        <div>
-          <div id="profile_description">
-            <h2>Web Developper</h2>
-            <h3>Front-end Javascript - Freelance</h3>
+      <>
+        <ProfilStyle>
+          <div>
+            <div id="profile_description">
+              <h2>Web Developper</h2>
+              <h3>Front-end Javascript - Freelance</h3>
+            </div>
+            <div id="profile_picture">
+              <Img fluid={ placeholderImage.childImageSharp.fluid } />
+            </div>
           </div>
-          <div id="profile_picture">
-            <Img fluid={ placeholderImage.childImageSharp.fluid } />
+          <div id="profile_presentation">
+            "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another IT cursus. I'm now looking to manage my own activity in addition to a part-time contract. I need you to choose me for your next freelance needs, in order to help me 
+  finance my future music jam session houseboat ! ""
           </div>
-        </div>
-        <div id="profile_presentation">
-          "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another IT cursus. I'm now looking to manage my own activity in addition to a part-time contract. I need you to choose me for your next freelance needs, in order to help me 
-finance my future music jam session houseboat ! ""
-        </div>
-      </ProfilStyle>
+        </ProfilStyle>
+        <ProfilTransitionStyle></ProfilTransitionStyle>
+      </>
     }
   />
 export default Profil

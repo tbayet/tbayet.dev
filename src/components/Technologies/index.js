@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import TechnologiesStyle from './style'
 import FlipCard from './FlipCard'
 
@@ -15,87 +14,79 @@ import FlipCard from './FlipCard'
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const cards = [
-  {
-    note: 4,
-    icon: 'icon-c',
-    name: 'Langage C'
-  },
-  {
-    note: 2,
-    icon: 'icon-shell',
-    name: 'Shell script'
-  },
-  {
-    note: 2,
-    icon: 'icon-php',
-    name: 'PHP'
-  },
-  {
-    note: 2,
-    icon: 'icon-mysql',
-    name: 'MySQL'
-  },
-  {
-    note: 4,
-    icon: 'icon-html',
-    name: 'HTML 5'
-  },
-  {
-    note: 4,
-    icon: 'icon-css',
-    name: 'CSS 3'
-  },
-  {
-    note: 4,
-    icon: 'icon-javascript',
-    name: 'Javascript'
-  },
-  {
-    note: 3,
-    icon: 'icon-angular',
-    name: 'Angular'
-  },
-  {
-    note: 3,
-    icon: 'icon-vue',
-    name: 'Vue'
-  },
-  {
-    note: 2,
-    icon: 'icon-nodejs',
-    name: 'NodeJS'
+class Technologies extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { video: false }
+    this.handleClick = this.handleClick.bind(this)
   }
-]
-
-const Technologies = () =>
-  <StaticQuery
-    query={graphql`
-      query {
-        svgBackground: file(relativePath: { eq: "mac-background.svg" }) {
-          publicURL
-        }
-      }
-    `}
-    Style
-    render={({ svgBackground: { publicURL } }) =>
-      <TechnologiesStyle background={publicURL}>
-        <div id="mac_container">
-          <div id="mac_screen">
-            <div id="cards_container">
-              {cards.map((card, index) => {
-                return (
-                  <div key={index} className="card">
-                    <FlipCard name={card.name} icon={card.icon} />
-                  </div>
-                )
-              })}
+  handleClick (e) {
+    this.setState({
+      video: !this.state.video
+    })
+  }
+  render () {
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            cards: allCardsJson {
+              edges {
+                node {
+                  note,
+                  icon,
+                  name
+                }
+              }
+            },
+            svgBackground: file(relativePath: { eq: "mac-background.svg" }) {
+              publicURL
+            },
+            videoMe: file(relativePath: { eq: "video.mp4" }) {
+              publicURL
+            },
+            icons: allFile(filter: { relativeDirectory: {eq: "icons" } }) {
+              edges {
+                node {
+                  name,
+                  publicURL
+                }
+              }
+            }
+          }
+        `}
+        render={({ svgBackground: { publicURL }, icons: { edges }, cards, videoMe }) =>
+          <TechnologiesStyle background={publicURL} video={this.state.video}>
+            <div id="mac_container">
+              <div id="mac_screen">
+                <div id="cards_container">
+                  {cards.edges.map(({ node }, index) => {
+                    const svg = edges.find(e => e.node.name === node.icon)
+                    return (
+                      <div key={index} className="card">
+                        <FlipCard name={node.name} note={node.note} icon={svg.node.publicURL} />
+                      </div>
+                    )
+                  })}
+                </div>
+                <div className="mac_video">
+                  <video src={videoMe.publicURL} autoPlay="autoplay" loop="loop" muted="muted"></video>
+                </div>
+              </div>
+              <div id="mac_bottom"><button onClick={this.handleClick}></button></div>
+              <div id="mac_foot"></div>
             </div>
-          </div>
-          <div id="mac_bottom"></div>
-          <div id="mac_foot"></div>
-        </div>
-      </TechnologiesStyle>
-    }
-  />
+          </TechnologiesStyle>
+        }
+      />
+    )
+  }
+}
+
+Technologies.propTypes = {
+}
+
+Technologies.defaultProps = {
+}
+
 export default Technologies
