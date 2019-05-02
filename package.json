@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
-  "private": true,
+  "private": false,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Thomas Bayet",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
@@ -22,8 +22,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-slick": "^0.24.0",
-    "slick-carousel": "^1.8.1"
+    "react-slick": "^0.24.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",

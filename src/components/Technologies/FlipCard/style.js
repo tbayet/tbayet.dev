@@ -43,7 +43,7 @@ const FlipCardStyle = styled.div`
       margin-top: -20%;
       background-color: white;
       mask: url(${({ icon }) => icon}) no-repeat center;
-      mask-size: contain;
+      mask-size: 100% 100%;
     }
   }
   .card_back {

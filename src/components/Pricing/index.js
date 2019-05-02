@@ -23,10 +23,13 @@ const Pricing = () =>
               ...GatsbyImageSharpFluid
             }
           }
+        },
+        transitionBackground: file(relativePath: { eq: "transition-background.svg" }) {
+          publicURL
         }
       }
     `}
-    render={({ placeholderImage }) =>
+    render={({ placeholderImage, transitionBackground }) =>
       <>
         <PricingStyle>
           <div>
@@ -59,7 +62,7 @@ const Pricing = () =>
             <div>Incl. taxes</div>
           </div>
         </PricingStyle>
-        <PricingTransitionStyle></PricingTransitionStyle>
+        <PricingTransitionStyle background={transitionBackground.publicURL}></PricingTransitionStyle>
       </>
     }
   />

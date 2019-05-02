@@ -24,10 +24,13 @@ const Profil = () =>
               ...GatsbyImageSharpFluid
             }
           }
+        },
+        transitionBackground: file(relativePath: { eq: "transition-background-reverse.svg" }) {
+          publicURL
         }
       }
     `}
-    render={({ placeholderImage }) =>
+    render={({ placeholderImage, transitionBackground }) =>
       <>
         <ProfilStyle>
           <div>
@@ -40,11 +43,11 @@ const Profil = () =>
             </div>
           </div>
           <div id="profile_presentation">
-            "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another IT cursus. I'm now looking to manage my own activity in addition to a part-time contract. I need you to choose me for your next freelance needs, in order to help me 
+            "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another IT cursus. I'm now looking to manage my own activity in addition to a part-time contract. I need you to choose me for your next freelance needs, in order to help me
   finance my future music jam session houseboat ! ""
           </div>
         </ProfilStyle>
-        <ProfilTransitionStyle></ProfilTransitionStyle>
+        <ProfilTransitionStyle background={transitionBackground.publicURL}></ProfilTransitionStyle>
       </>
     }
   />

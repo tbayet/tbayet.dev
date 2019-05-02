@@ -4,7 +4,8 @@ export const ProfilTransitionStyle = styled.div`
   margin-top: -1px;
   flex: 1 1 auto;
   height: 200px;
-  background-image: ${({ theme }) => `url("data:image/svg+xml;utf8, <svg width='64' height='16' xmlns='http://www.w3.org/2000/svg'><path d='M0 16 C52 16 32 0 64 0 L64 0 L58 0 L0 0 Z' fill='${theme.primaryColor}' /></svg>")`};
+  background-image: ${({ background }) => `url(${background})`};
+  background-color: ${({ theme }) => theme.primaryColor};
   background-size: 100% 200px;
   background-repeat: no-repeat;
   background-position: top;

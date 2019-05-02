@@ -18,7 +18,6 @@ class Modal extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount () {
- 
   }
   handleClick (e) {
     this.setState({

@@ -9,6 +9,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
+
+import { ThemeProvider } from 'emotion-theming'
 import theme from '../theme'
 
 import Header from './Header'
@@ -25,7 +27,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={({ layoutJson: { name, birthdate } }) => (
-      <>
+      <ThemeProvider theme={theme}>
         <Global
           styles={css`
             body {
@@ -43,7 +45,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer>{(() => { console.log(name, birthdate) })()}</Footer>
         </div>
-      </>
+      </ThemeProvider>
     )}
   />
 )

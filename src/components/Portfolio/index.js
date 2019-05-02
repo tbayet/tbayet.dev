@@ -46,11 +46,14 @@ class Portfolio extends React.Component {
                   ...GatsbyImageSharpFluid
                 }
               }
+            },
+            transitionBackground: file(relativePath: { eq: "transition-background.svg" }) {
+              publicURL
             }
           }
         `}
-        render={({ IMGwood: { publicURL }, IMGastro: { childImageSharp } }) =>
-          <PortfolioStyle background={publicURL} animating={this.state.animating}>
+        render={({ IMGwood: { publicURL }, IMGastro: { childImageSharp }, transitionBackground }) =>
+          <PortfolioStyle background={publicURL} animating={this.state.animating} transitionBackground={transitionBackground.publicURL}>
             <div className="table_top"></div>
             <div className="table_layer">
               <div ref={this.myRef} className="table_stair">

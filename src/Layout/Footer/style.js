@@ -3,65 +3,7 @@ import { css } from '@emotion/core'
 
 export const CarouselStyle = styled.div`
   flex: 1 1 auto;
-  padding-top: 8px;
-  padding-bottom: 150px;
-  overflow-y: hidden;
-  height: 100px;
-  width: 40vw;
-  min-width: 500px;
-  background-color: black;
-  .slick-track {
-    display: flex;
-  }
-  .slick-slide > div {
-    display: flex !important;
-  }
-  .slick-slide {
-    height: auto;
-    justify-content: center;
-    display: flex !important;
-    flex: 1 1 auto;
-  }
-  slick-slide > div > div {
-    flex: auto;
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .slick-slide {
-    outline: none;    
-  }
-  .car_slide {
-    position: relative;
-    width: 50px !important;
-    height: 50px;
-    outline: none;
-    transition: width 0.5s linear, height 0.5s linear;
-  }
-
-  @media screen and (max-width: 768px) {
-    .slick-slide .car_slide {
-      width: 100px !important;
-      height: 100px !important;
-    }
-  }
-  @media screen and (min-width: 769px) {
-    .slick-current .car_slide {
-      width: 100px !important;
-      height: 100px !important;
-    }
-    .slick-slide:not(.slick-current) .car_slide {
-      &:before {
-        content: "";
-        z-index: 50;
-        position: absolute;
-        top: 0;
-        bottom:0;
-        left:0;
-        right:0;
-        background-color: rgba(0, 0, 0, 0.7);
-      }
-    }
-  }
+  height: 100%;
 `
 
 const FooterStyle = styled.footer`

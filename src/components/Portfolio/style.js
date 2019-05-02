@@ -119,10 +119,11 @@ const PortfolioStyle = styled.div`
     margin-top: -1px;
     flex: 1 1 auto;
     height: 150px;
-    background-image: ${({ theme }) => `url("data:image/svg+xml;utf8, <svg width='64' height='16' xmlns='http://www.w3.org/2000/svg'><path d='M0 0 C52 0 32 16 64 16 L64 16 L58 16 L0 16 Z' fill='${theme.backgroundColor}' /></svg>")`};
+    background-image: ${({ transitionBackground }) => `url(${transitionBackground})`};
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top;
+    transform: rotateX(180deg);
   }
 `
 

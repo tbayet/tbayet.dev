@@ -2,9 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import FooterStyle, { CarouselStyle } from './style'
 import Img from 'gatsby-image'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import SlickSlider from 'react-slick'
+import Slider from './Slider'
 
 const json = [
   {
@@ -30,45 +28,11 @@ const json = [
 ]
 
 const Carousel = ({ images }) => {
-  const settings = {
-    dots: false,
-    rtl: true,
-    infinite: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
   return (
     <CarouselStyle>
-      <SlickSlider {...settings}>
-        {json.map((e, i) => <div key={i} className="car_slide"><Img fluid={images[i].node.childImageSharp.fluid} /></div>)}
-      </SlickSlider>
+      <Slider>
+        {json.map((e, i) => <div key={i}><Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={images[i].node.childImageSharp.fluid} /></div>)}
+      </Slider>
     </CarouselStyle>
   )
 }
