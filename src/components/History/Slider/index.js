@@ -37,18 +37,16 @@ class Slider extends React.Component {
       <ContainerStyle onMouseEnter={() => this.handleHover(true)} onMouseLeave={() => this.handleHover(false)}>
         <span onClick={() => this.handleClick(-1)}></span>
         <SliderStyle>
-          {this.state.current}
           {React.Children.map(this.props.children, (child, index) =>
-            <SlideStyle current={this.state.current} key={'slide-' + index} index={index}>
-              {child}
+            <SlideStyle current={this.state.current} key={'slideA-' + index} index={index}>
+              {child.props.children[0]}
             </SlideStyle>
           )}
         </SliderStyle>
         <SliderStyle>
-          {this.state.current}
           {React.Children.map(this.props.children, (child, index) =>
-            <SlideStyle current={this.state.current} key={'slide-' + index} index={index}>
-              {child}
+            <SlideStyle current={this.state.current} key={'slideB-' + index} index={index}>
+              {child.props.children[1]}
             </SlideStyle>
           )}
         </SliderStyle>

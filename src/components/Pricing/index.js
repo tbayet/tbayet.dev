@@ -1,5 +1,5 @@
 import React from 'react'
-import PricingStyle, { PricingTransitionStyle } from './style'
+import PricingStyle from './style'
 import { StaticQuery, graphql } from 'gatsby'
 
 /*
@@ -23,47 +23,41 @@ const Pricing = () =>
               ...GatsbyImageSharpFluid
             }
           }
-        },
-        transitionBackground: file(relativePath: { eq: "transition-background.svg" }) {
-          publicURL
         }
       }
     `}
     render={({ placeholderImage, transitionBackground }) =>
-      <>
-        <PricingStyle>
-          <div>
-            <table>
-              <thead>
-                <tr><th>What can i do</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Statics sites or dynamic web apps</td></tr>
-                <tr><td>JSX components with re-usability</td></tr>
-                <tr><td>Manual or unitary testing and bugs correction</td></tr>
-                <tr><td>Git merge requests check -> comment -> approve</td></tr>
-                <tr><td>Clean your code, improving maintainability</td></tr>
-                <tr><td>Be present to assist you or a class as an Helper</td></tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr><th>How do i work</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>From my home, or at my school or at your office</td></tr>
-                <tr><td>I contact you to keep you in touch about progression</td></tr>
-                <tr><td>If a contract feature is missing or incomplete, obviously free fix</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="price">
-            <div><span>400€</span> /day</div>
-            <div>Incl. taxes</div>
-          </div>
-        </PricingStyle>
-        <PricingTransitionStyle background={transitionBackground.publicURL}></PricingTransitionStyle>
-      </>
+      <PricingStyle>
+        <div>
+          <table>
+            <thead>
+              <tr><th>What can i do</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Statics sites or dynamic web apps</td></tr>
+              <tr><td>JSX components with re-usability</td></tr>
+              <tr><td>Manual or unitary testing and bugs correction</td></tr>
+              <tr><td>Git merge requests check -> comment -> approve</td></tr>
+              <tr><td>Clean your code, improving maintainability</td></tr>
+              <tr><td>Be present to assist you or a class as an Helper</td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr><th>How do i work</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>From my home, or at my school or at your office</td></tr>
+              <tr><td>I contact you to keep you in touch about progression</td></tr>
+              <tr><td>If a contract feature is missing or incomplete, obviously free fix</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="price">
+          <div><span>400€</span> /day</div>
+          <div>Incl. taxes</div>
+        </div>
+      </PricingStyle>
     }
   />
 

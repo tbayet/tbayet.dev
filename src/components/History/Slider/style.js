@@ -9,6 +9,10 @@ export const SlideStyle = styled.div`
   width: 100%;
   height: 100%;
   & > * {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
   }
@@ -54,6 +58,11 @@ export const ContainerStyle = styled.div`
 const SliderStyle = styled.div`
   flex: 0.8 1 auto;
   height: 100%;
+  &:last-of-type ${SlideStyle} {
+    display: flex;
+    align-items: center;
+  }
+
   &:first-of-type {
     flex: 0.2 1 auto;
     height: 50%;

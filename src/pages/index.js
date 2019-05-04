@@ -6,6 +6,7 @@ import Profil from '../components/Profil'
 import Technologies from '../components/Technologies'
 import Portfolio from '../components/Portfolio'
 import Pricing from '../components/Pricing'
+import History from '../components/History'
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Technologies />
     <Portfolio />
     <Pricing />
+    <History />
   </Layout>
 )
 

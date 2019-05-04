@@ -1,18 +1,5 @@
 import styled from '@emotion/styled'
 
-export const PricingTransitionStyle = styled.div`
-  margin-top: -1px;
-  z-index: 1;
-  flex: 1 1 auto;
-  height: 200px;
-  background-image: ${({ background }) => `url(${background})`};
-  background-color: ${({ theme }) => theme.primaryColor};
-  background-size: 100% 200px;
-  background-repeat: no-repeat;
-  background-position: top;
-  transform: rotateY(180deg);
-`
-
 const PricingStyle = styled.div`
   position: relative;
   padding-left: 5%;

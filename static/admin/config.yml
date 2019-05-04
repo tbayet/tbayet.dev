@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: slider
+    label: Slider
+    folder: slider
+    create: true
+    fields:
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+      - { name: "picture", label: "Featured Image", widget: "image", allow_multiple: false }
