@@ -10,7 +10,7 @@ public_folder: assets
 collections:
   - name: slider
     label: Slider
-    folder: slider
+    folder: static/slider
     create: true
     fields:
       - { name: date, label: Date, widget: date }

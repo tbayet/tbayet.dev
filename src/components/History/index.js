@@ -30,45 +30,34 @@ const json = [
 class History extends React.Component {
   render () {
     return (
-      <StaticQuery
-        query={graphql`
-          query {
-            slider: allFile(filter: { relativeDirectory: {eq: "admin"} }) {
-              edges {
-                node {
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-              }
-            },
-            carouselImages: allFile(filter: { relativeDirectory: {eq: "carousel" } }) {
-              edges {
-                node {
-                  childImageSharp {
-                    fluid(maxWidth: 300) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  },
-                  name
-                }
-              }
-            }
-          }
-        `}
-        render={({ carouselImages: { edges }, slider }) =>
-          <HistoryStyle>
-            <Slider>
-              {json.map((e, i) =>
-                <span key={i}>
-                  <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={edges[i].node.childImageSharp.fluid} />
-                  <p>blabla {e.description} {i}</p>
-                </span>
-              )}
-            </Slider>
-          </HistoryStyle>
-        }
-      />
+      null
+      // <StaticQuery
+      //   query={graphql`
+      //     query {
+      //       slider: allFile(filter: { relativeDirectory: {eq: "slider"} }) {
+      //         edges {
+      //           node {
+      //             childMarkdownRemark {
+      //               html
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   `}
+      //   render={({ slider: { edges } }) =>
+      //     <HistoryStyle>
+      //       <Slider>
+      //         {json.map((e, i) =>
+      //           <span key={i}>
+      //             {/* <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={edges[i].node.childImageSharp.fluid} />
+      //             <p>blabla {e.description} {i}</p> */}
+      //           </span>
+      //         )}
+      //       </Slider>
+      //     </HistoryStyle>
+      //   }
+      // />
     )
   }
 }
