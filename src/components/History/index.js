@@ -38,7 +38,8 @@ class History extends React.Component {
       //         edges {
       //           node {
       //             childMarkdownRemark {
-      //               html
+      //               html,
+      //               date(formatString: "MMMM DD, YYYY")
       //             }
       //           }
       //         }
@@ -50,8 +51,8 @@ class History extends React.Component {
       //       <Slider>
       //         {json.map((e, i) =>
       //           <span key={i}>
-      //             {/* <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={edges[i].node.childImageSharp.fluid} />
-      //             <p>blabla {e.description} {i}</p> */}
+      //             <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={edges[i].node.childImageSharp.fluid} />
+      //             <p>blabla {e.description} {i}</p>
       //           </span>
       //         )}
       //       </Slider>
