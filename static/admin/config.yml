@@ -5,6 +5,7 @@ backend:
     - editor
 
 media_folder: src/images/slider
+public_folder: assets
 
 collections:
   - name: slider
