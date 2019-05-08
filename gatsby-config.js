@@ -15,7 +15,19 @@ module.exports = {
       }
     },
     // Markdown files gestion
-    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-normalize-paths',
+            options: {
+              pathFields: ['picture']
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

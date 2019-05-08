@@ -2,7 +2,7 @@
 dateFrom: 2017-04-02T22:00:00.000Z
 dateTo: 2017-08-24T22:00:00.000Z
 title: Safran Aircraft Engine
-picture: /assets/safran.png
+picture: ../../src/images/slider/safran.png
 ---
 **Internship**
 
