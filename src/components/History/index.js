@@ -4,61 +4,50 @@ import HistoryStyle from './style'
 import Img from 'gatsby-image'
 import Slider from './Slider'
 
-const json = [
-  {
-    img: 'yolo.jpg',
-    description: 'rube rubarbe rubbaarrbe rubarbe rubarbe rubarrbe rubarbe rubbe rubbe '
-  },
-  {
-    img: 'yolo.jpg',
-    description: ' rubararbe rubarrbe rubarberbe rubare rarbe '
-  },
-  {
-    img: 'yolo.jpg',
-    description: 'rubadfsgfhjgdhhagdfhfda fsdghdhfdhg dfgh sfhgbarbe '
-  },
-  {
-    img: 'yolo.jpg',
-    description: 'rubfdsg gdsfgdsfg dfgsgrubarbe rubafgh sdfgdsfgdf  rubarbe '
-  },
-  {
-    img: 'yolo.jpg',
-    description: 'rubarbdfg dsgdfgbe rubarbe rsdfg dgfgsdfg fgdgdfgsd dfgds gdsfgsddfgdfsgarbe '
-  }
-]
-
 class History extends React.Component {
   render () {
     return (
-      null
-      // <StaticQuery
-      //   query={graphql`
-      //     query {
-      //       slider: allFile(filter: { relativeDirectory: {eq: "slider"} }) {
-      //         edges {
-      //           node {
-      //             childMarkdownRemark {
-      //               html,
-      //               date(formatString: "MMMM DD, YYYY")
-      //             }
-      //           }
-      //         }
-      //       }
-      //     }
-      //   `}
-      //   render={({ slider: { edges } }) =>
-      //     <HistoryStyle>
-      //       <Slider>
-      //         {json.map((e, i) =>
-      //           <span key={i}>
-      //             <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={edges[i].node.childImageSharp.fluid} />
-      //             <p>blabla {e.description} {i}</p>
-      //           </span>
-      //         )}
-      //       </Slider>
-      //     </HistoryStyle>
-      //   }
-      // />
+      <StaticQuery
+        query={graphql`
+          query {
+            slider: allMarkdownRemark (filter: { fileAbsolutePath: { regex : "/static\/slider/" } }) {
+              edges {
+                node {
+                  html
+                  frontmatter {
+                    title
+                    dateFrom(formatString: "YYYY")
+                    dateTo(formatString: "YYYY")
+                    picture {
+                      childImageSharp {
+                        fluid(maxWidth: 300) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={({ slider: { edges } }) =>
+          <HistoryStyle>
+            <Slider>
+              {edges.map((e, i) =>
+                <span key={'slide-' + i}>
+                  <Img objectFit="cover" style={{ height: '100%' }} objectPosition="50% 50%" fluid={e.node.frontmatter.picture.childImageSharp.fluid} />
+                  <div>
+                    {e.node.frontmatter.dateFrom} - {e.node.frontmatter.dateTo}
+                    {e.node.frontmatter.title}
+                    <p dangerouslySetInnerHTML={{ __html: e.node.html }}></p>
+                  </div>
+                </span>
+              )}
+            </Slider>
+          </HistoryStyle>
+        }
+      />
     )
   }
 }

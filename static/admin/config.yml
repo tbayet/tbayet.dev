@@ -13,7 +13,8 @@ collections:
     folder: static/slider
     create: true
     fields:
-      - { name: date, label: Date, widget: date }
+      - { name: dateFrom, label: date From, widget: date }
+      - { name: dateTo, label: date To, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
       - { name: "picture", label: "Featured Image", widget: "image", allow_multiple: false }

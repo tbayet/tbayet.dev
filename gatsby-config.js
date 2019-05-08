@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // Images queries
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,12 +14,13 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    // Markdown files gestion
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        // name: 'markdown-pages',
-        path: `${__dirname}/static`
+        name: 'markdown-pages',
+        path: `${__dirname}/static/`
       }
     },
     {
@@ -27,7 +29,18 @@ module.exports = {
         cmsConfig: `/static/admin/config.yml`
       }
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'markdownRemark',
+        imagePath: 'picture'
+        // OPTIONAL: Name you want to give new image field on the node.
+        // Defaults to 'localImage'.
+        // name: 'allItemImages'
+      }
+    },
     `gatsby-transformer-json`,
+    // JSON data queries
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -54,6 +67,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-emotion`
     },
+    // Netlify CMS integration
     `gatsby-plugin-netlify-cms`
   ]
 }
