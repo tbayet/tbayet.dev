@@ -4,6 +4,6 @@ dateTo: 2018-12-30T23:00:00.000Z
 title: Ecole 42 - Born2Code
 picture: /assets/ecole-42.jpg
 ---
-[Une pédagogie complètement à part.](https://www.42.fr/) Peer-to-peer learning, de solides bases en C menant sur un cursus progressivement personnalisé, l'emploi du temps aussi.
+[A pedagogy completely apart.](https://www.42.fr/) Peer-to-peer learning, strong foundation in C on a progressively personalized curriculum, the schedule too.
 
-Associatif: BDE, 42Music
+Associative: BDE, 42Music
