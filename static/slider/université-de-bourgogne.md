@@ -1,14 +1,14 @@
 ---
 dateFrom: 2009-09-06T22:00:00.000Z
 dateTo: 2012-06-29T22:00:00.000Z
-title: Université de Bourgogne
+title: University of Burgundy
 picture: /assets/ub.png
 ---
-Diplôme Universitaire Technologique (**DUT**) en informatique:
+Technologic University Degree (**DUT**) in informatics :
 
-* Stage de 11 semaines au service informatique du Conseil Régional de Bourgogne\
-  _(Analyse et développement - PHP)_
+* 11 weeks internship at the IT department of the Regional Council of Burgundy\
+  _(Analysis and development - PHP)_
 
-Licence Mathématiques-Informatique
+Bachelor's degree's year in Computer Science an Mathematics
 
-Associatif: BDE, Festival .dijon//SAITEN
+Associative: BDE, Festival .dijon//SAITEN
