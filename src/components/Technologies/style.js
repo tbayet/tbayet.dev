@@ -85,6 +85,7 @@ const TechnologiesStyle = styled.div`
     }
   }
   & #mac_foot {
+    z-index: 0;
     margin-left: 32vw;
     margin-right: 32vw;
     margin-bottom: 10px;

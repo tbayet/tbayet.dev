@@ -35,15 +35,14 @@ const PortfolioStyle = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: -200px;
-  background-color: #804f07;
-  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
 
   & > .table_top {
     flex: 0 0 100%;
     height: 300px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 99%, rgba(255, 255, 255, 0.3) 99%);
+    background:  linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 1%, rgba(0,0,0,0.0) 100%);
   }
   & > .table_layer {
+    background-color: #8c8c8c;
     padding: 40px;
     padding-left: 0;
     display: flex;
@@ -116,6 +115,7 @@ const PortfolioStyle = styled.div`
     }
   }
   & > .table_end {
+    background-color: #8c8c8c;
     margin-top: -1px;
     flex: 1 1 auto;
     height: 150px;

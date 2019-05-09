@@ -1,5 +1,6 @@
 import React from 'react'
 import SliderStyle, { SlideStyle, ContainerStyle } from './style'
+import { LeftBrace, RightBrace } from './braces.svg'
 
 class Slider extends React.Component {
   constructor (props) {
@@ -35,7 +36,7 @@ class Slider extends React.Component {
   render () {
     return (
       <ContainerStyle onMouseEnter={() => this.handleHover(true)} onMouseLeave={() => this.handleHover(false)}>
-        <span onClick={() => this.handleClick(-1)}></span>
+        <LeftBrace onClick={() => this.handleClick(-1)} color="black" height={350} />
         <SliderStyle>
           {React.Children.map(this.props.children, (child, index) =>
             <SlideStyle current={this.state.current} key={'slideA-' + index} index={index}>
@@ -50,7 +51,7 @@ class Slider extends React.Component {
             </SlideStyle>
           )}
         </SliderStyle>
-        <span onClick={() => this.handleClick(1)}></span>
+        <RightBrace onClick={() => this.handleClick(1)} color="black" height={350} />
       </ContainerStyle>
     )
   }

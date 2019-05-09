@@ -18,9 +18,9 @@ const Profil = () =>
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        placeholderImage: file(relativePath: { eq: "profil.jpeg" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -39,7 +39,7 @@ const Profil = () =>
               <h3>Front-end Javascript - Freelance</h3>
             </div>
             <div id="profile_picture">
-              <Img fluid={ placeholderImage.childImageSharp.fluid } />
+              <Img imgStyle={{ objectPosition: '100% 0%', objectFit: 'contain' }} style={{ height: '100%' }} fluid={ placeholderImage.childImageSharp.fluid } />
             </div>
           </div>
           <div id="profile_presentation">

@@ -1,7 +1,37 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import html5back from '../../images/html5back.svg'
-import html5front from '../../images/html5front.svg'
+
+export const StyledButton = styled.a`
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  min-width: 120px;
+  text-align: center;
+  border-top-left-radius: 80px 10px;
+  border-top-right-radius: 80px 10px;
+  border-bottom-left-radius: 80px 10px;
+  border-bottom-right-radius: 80px 10px;
+  border-bottom: solid 5px rgba(0, 0, 0, 0.9);
+  transition: border-bottom 0.3s, margin-top 0.3s, background-color 0.3s, color 0.3s;
+  &:hover {
+    margin-top: calc(20px + 4px);
+    border-bottom: solid 1px rgba(0, 0, 0, 1);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: calc(20px + 5px);
+    box-shadow: inset 0px 2px 0px 0px black;
+    border-bottom: solid 0px black;
+  }
+`
 
 export const FooterTransitionStyle = styled.div`
   margin-top: -1px;
@@ -16,11 +46,6 @@ export const FooterTransitionStyle = styled.div`
   transform: rotateY(180deg);
 `
 
-export const CarouselStyle = styled.div`
-  flex: 1 1 auto;
-  height: 100%;
-`
-
 const FooterStyle = styled.footer`
   position: absolute;
   background-color: ${({ theme }) => theme.primaryColor};
@@ -28,38 +53,19 @@ const FooterStyle = styled.footer`
   font: ${({ theme }) => theme.fontPrimary.bold};
   right: 0;
   left: 0;
-  margin-bottom: -200px;
   & > .footer_container {
-    position: relative;
-    width: 100%;
-    top: -250px;
-    margin-bottom: -200px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    & > .footer_svg1 {      
-      flex: 0 1 calc(300px + 15vw);;
-      z-index: 2;
-      position: relative;
-      height: calc(300px + 15vw);
-      width: calc(300px + 15vw);
-      background-image: url(${html5back});
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      & > .footer_svg2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        height: 100%;
-        background: url(${html5front});
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+    justify-content: flex-start;
+    padding-left: 20px;
+    & > div {
+      margin-top: -180px;
+      height: 130px;
+      flex: 0 1;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
   }
 `
