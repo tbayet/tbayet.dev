@@ -49,9 +49,11 @@ const ProfilStyle = styled.div`
       }
       & > h2 {
         font-size: ${({ theme }) => theme.font43};
+        font-family: ${({ theme }) => theme.fontTitle.primary};
       }
       & > h3 {
         font-size: ${({ theme }) => theme.font30};
+        font-family: ${({ theme }) => theme.fontTitle.secondary};
       }
     }
     & > #profile_picture {
@@ -76,7 +78,7 @@ const ProfilStyle = styled.div`
     }
   }
   & > #profile_presentation {
-    font: ${({ theme }) => theme.fontPrimary.light};
+    font-family: ${({ theme }) => theme.fontTitle.tertiary}, sans-serif;
     margin-top: 100px;
     margin-left: 20%;
     margin-right: 20%;

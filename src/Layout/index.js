@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
               margin-top: ${theme.headerSize}; 
               background-color: ${theme.backgroundColor};
               color: ${theme.onBackground};
-              font: ${theme.fontPrimary.regular};
+              font-family: ${theme.fontContent.primary};
             }
           `}
         />

@@ -77,7 +77,9 @@ function SEO ({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link href="//fonts.googleapis.com/css?family=Merienda|Julius Sans One|Gruppo|Source+Sans+Pro|Jura|Audiowide" rel="stylesheet" type="text/css" />
+    </Helmet>
   )
 }
 

@@ -11,7 +11,7 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   height: ${({ theme }) => theme.headerSize};
-  font: ${({ theme }) => theme.fontPrimary.bold};
+  font-family: ${({ theme }) => theme.fontTitle.primary};
   padding-left: 4vw;
   padding-right: 4vw;
   box-shadow: ${({ fixed, theme }) => (fixed ? `0px 13px 10px -10px ` : `0px 0px -10px -10px `) + theme.primaryColor};

@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 export const StyledButton = styled.a`
+  font-family: ${({ theme }) => theme.fontContent.secondary};
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
@@ -59,7 +60,7 @@ const FooterStyle = styled.footer`
     padding-left: 20px;
     & > div {
       margin-top: -180px;
-      height: 130px;
+      height: 140px;
       flex: 0 1;
       z-index: 1;
       display: flex;

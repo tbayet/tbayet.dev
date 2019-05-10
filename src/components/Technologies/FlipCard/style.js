@@ -10,11 +10,9 @@ const FlipCardStyle = styled.div`
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  
   ${({ flip }) => flip && css`
     transform: rotateY(180deg);
   `}
-
   .card_front, .card_back {
     position: absolute;
     width: 100%;
@@ -66,15 +64,16 @@ const FlipCardStyle = styled.div`
         mask-size: contain;
       }
       & > h4 {
+        font-family: ${({ theme }) => theme.fontTitle.primary};
         flex: 0.8 1 auto;
         text-align: center;
       }
     }
     & > .card_content {
-      color: black;
+      font-family: ${({ theme }) => theme.fontContent.tertiary};
+      color: ${({ theme }) => theme.primaryColor};
       position: absolute;
       background-color: #919ca7;
-      font: ${({ theme }) => theme.fontTertiary.light};
       bottom: 0;
       left: 0;
       right: 0;
@@ -90,11 +89,14 @@ const FlipCardStyle = styled.div`
         & > div {
           margin-top: 10px;
         }
-        & > span > img {
+        & > span > svg {
           height: 1.2vw;
           width: 1.2vw; 
           vertical-align: -0.2vw;
           margin-right: 0.5vw;
+          & path {
+            fill: ${({ theme }) => theme.primaryColor};
+          }
         }
       }
       & > span:nth-of-type(1) {
@@ -125,7 +127,7 @@ const FlipCardStyle = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
-      & > span > img {
+      & > span > svg {
         height: 16px;
         width: 16px;
         margin-left: 4px;

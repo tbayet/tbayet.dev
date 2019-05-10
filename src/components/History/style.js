@@ -14,15 +14,17 @@ export const HistoryDesc = styled.div`
     flex: 1 1 auto;
     font-style: italic;
     font-size: calc(0.5rem + 1vw);
+    font-family: ${({ theme }) => theme.fontTitle.secondary};
   }
   & > h3 {
+    font-family: ${({ theme }) => theme.fontTitle.primary};
     flex: 1 1 auto;
     font-size: calc(1rem + 1.5vw);
     margin: auto;
   }
   & > div {
+    font-family: ${({ theme }) => theme.fontContent.primary};
     flex: 1 1 100%;
-    border-top: solid 1px black;
     font-size: calc(0.8rem + 0.5vw);
   }
 `

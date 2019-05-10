@@ -14,6 +14,16 @@ const theme = {
   secondaryColorHover: '#44444e',
   secondaryColorActive: '#1d1d29',
   onSecondary: '#F4F6F5',
+  fontTitle: {
+    primary: `'Julius Sans One', sans-serif`,
+    secondary: `'Gruppo', sans-serif`,
+    tertiary: 'Merienda'
+  },
+  fontContent: {
+    primary: `'Source Sans Pro', sans-serif`,
+    secondary: `'Audiowide', sans-serif`,
+    tertiary: `'Jura', sans-serif`
+  },
   fontPrimary: {
     regular: 'regular 1rem Lato, sans-serif',
     bold: 'bold 1rem Lato, sans-serif',
