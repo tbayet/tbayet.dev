@@ -2,6 +2,6 @@
 <svg
   xmlns='http://www.w3.org/2000/svg'
   width='64' height='16'
-  fill='white'>
+  fill='#F4F6F5'>
   <path d='M0 16 C52 16 32 0 64 0 L64 0 L58 0 L0 0 Z' />
 </svg>

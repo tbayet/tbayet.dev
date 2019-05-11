@@ -1,7 +1,17 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-// import leftBrace from '../../../images/leftBrace.svg'
-// import rightBrace from '../../../images/rightBrace.svg'
+import { css, keyframes } from '@emotion/core'
+
+const imageAnimation = keyframes`
+  0% {
+    width: 100%;
+  }
+  20% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+`
 
 export const StyledBrace = styled.span`
   & > svg {
@@ -18,6 +28,22 @@ export const StyledBrace = styled.span`
     }
     transition: height 0.5s, fill-opacity 0.5s;
   }
+`
+export const AnimateStyle = styled.div`
+  z-index: 1;
+  content: '';
+  position: absolute !important;
+  ${({ dir }) => dir === 1 ? css`
+    left: 0;
+  ` : css`
+    right: 0;
+  `}
+  bottom:0;
+  top:0;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  ${({ animate }) => animate && css`
+    animation: ${imageAnimation} 0.5s ease-in;
+  `}
 `
 
 export const SlideStyle = styled.div`
@@ -36,6 +62,9 @@ export const SlideStyle = styled.div`
     transition: transform 0.5s;
     z-index: ${index === current ? 2 : 0};
   `}
+  & > * {
+    position: relative;
+  }
 `
 
 export const ContainerStyle = styled.div`

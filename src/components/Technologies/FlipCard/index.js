@@ -25,7 +25,6 @@ class FlipCard extends React.Component {
       <FlipCardStyle onClick={this.handleClick} flip={this.state.flip} icon={this.props.icon}>
         <div className="card_front">
           <div className="card_icon"></div>
-          {KnowledgeSVG}
           <div className="card_title">
             <RatingDot note={averageNote(this.props.note)}></RatingDot>
           </div>

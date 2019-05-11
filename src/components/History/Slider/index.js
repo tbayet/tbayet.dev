@@ -1,5 +1,5 @@
 import React from 'react'
-import SliderStyle, { SlideStyle, ContainerStyle } from './style'
+import SliderStyle, { SlideStyle, ContainerStyle, AnimateStyle } from './style'
 import { LeftBrace, RightBrace } from './braces.svg'
 
 class Slider extends React.Component {
@@ -41,6 +41,7 @@ class Slider extends React.Component {
           {React.Children.map(this.props.children, (child, index) =>
             <SlideStyle current={this.state.current} key={'slideA-' + index} index={index}>
               {child.props.children[0]}
+              <AnimateStyle dir={this.state.direction} animate={this.state.current === index}></AnimateStyle>
             </SlideStyle>
           )}
         </SliderStyle>
@@ -48,6 +49,7 @@ class Slider extends React.Component {
           {React.Children.map(this.props.children, (child, index) =>
             <SlideStyle current={this.state.current} key={'slideB-' + index} index={index}>
               {child.props.children[1]}
+              <AnimateStyle dir={this.state.direction} animate={this.state.current === index}></AnimateStyle>
             </SlideStyle>
           )}
         </SliderStyle>
