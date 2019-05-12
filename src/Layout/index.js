@@ -30,6 +30,9 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <Global
           styles={css`
+            html {
+              scroll-behavior: smooth;
+            }
             body {
               margin: 0;
               padding: 0;

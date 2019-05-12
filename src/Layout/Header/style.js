@@ -21,8 +21,23 @@ const HeaderStyle = styled.header`
   transition: background 0.5s ease-in, box-shadow 1.5s ease-out;
   & a {
     text-decoration: none;
+    cursor: pointer;
     color: ${({ theme, fixed }) => fixed ? theme.primaryColor : theme.onPrimary};
-    transition: color 1.5s;
+    transition: color 1.5s, transform 1s;
+  }
+  & > *:last-child {
+    display: inline-flex;
+    height: 40px;
+    font-size: 1.4rem;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      font-size: 1.5rem;
+    }
+    ${({ fixed }) => fixed && css`
+      transform: rotate(-180deg);
+    `}
   }
 `
 

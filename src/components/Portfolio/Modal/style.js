@@ -1,35 +1,22 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-export const OverlayStyle = styled.div`
-  position: fixed;
-  top: 0;
-  ${({ open }) => open && css`
-    z-index: 20;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: white;
-  `}
-`
-
 const ModalStyle = styled.div`
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.2s, transform 0.2s;
+  &:hover {
+    transform: scale(1.05, 1.02);
+    filter: grayscale(0%);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(0.95, 0.95);
+  }
   & > .modal_picture {
-    ${({ open }) => open ? css`
-    
-    ` : css`
-      &:hover {
-        filter: blur(3px);
-        cursor: pointer;
-      }
-      &:active {
-        transform: scale(0.95, 0.95);
-      }
-    `}
     position: relative;
     width: 100%;
     height: 100%;

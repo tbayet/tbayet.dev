@@ -1,13 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import PortfolioStyle from './style'
-import Modal from './Modal'
+import PortfolioStyle, { Modal } from './style'
+import ModalTrigger from './Modal'
 
 class Portfolio extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { animating: false }
+    this.state = { animating: false, modalOpen: false, modalContent: 0 }
     this.handleScroll = this.handleScroll.bind(this)
+    this.handleClick = this.handleClick.bind(this)
     this.myRef = React.createRef()
   }
 
@@ -15,9 +16,13 @@ class Portfolio extends React.Component {
     window.addEventListener('scroll', this.handleScroll)
   }
   componentWillUnmount () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   }
-
+  handleClick (e) {
+    this.setState({
+      modalOpen: !this.state.modalOpen
+    })
+  }
   handleScroll (e) {
     const currentTop = window.scrollY
     const currentBottom = window.scrollY + window.innerHeight
@@ -58,14 +63,20 @@ class Portfolio extends React.Component {
             <div className="table_layer">
               <div ref={this.myRef} className="table_stair">
                 <div >
-                  <div className="element"><Modal img={childImageSharp.fluid}></Modal></div>
-                  <div className="element"><Modal img={childImageSharp.fluid}></Modal></div>
-                  <div className="element"><Modal img={childImageSharp.fluid}></Modal></div>
-                  <div className="element"><Modal img={childImageSharp.fluid}></Modal></div>
+                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
                 </div>
               </div>
             </div>
             <div className="table_end"></div>
+            <Modal onClick={this.handleClick} open={this.state.modalOpen}>
+              <div onClick={(e) => e.stopPropagation()}>
+                {/* {portfolio[this.state.modalContent]} */}
+                HELLOOOOOOO
+              </div>
+            </Modal>
           </PortfolioStyle>
         }
       />

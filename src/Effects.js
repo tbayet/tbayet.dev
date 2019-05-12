@@ -32,7 +32,7 @@ export class FadeIn extends React.Component {
     window.addEventListener('scroll', this.handleScroll)
   }
   componentWillUnmount () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll (e) {

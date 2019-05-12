@@ -1,9 +1,20 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import FooterStyle, { FooterTransitionStyle, StyledButton } from './style'
+import FooterStyle, { FooterTransitionStyle, StyledButton, RoundButton, ButtonsOverlay } from './style'
 import Img from 'gatsby-image'
+import linkSVG from './link.svg'
 
 class Footer extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { toggle: false }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick () {
+    this.setState({
+      toggle: !this.state.toggle
+    })
+  }
   render () {
     return (
       <StaticQuery
@@ -17,8 +28,12 @@ class Footer extends React.Component {
         render={({ transitionBackground }) =>
           <>
             <FooterTransitionStyle background={transitionBackground.publicURL}></FooterTransitionStyle>
-            <FooterStyle>
+            <FooterStyle toggle={this.state.toggle}>
               <div className="footer_container">
+                <RoundButton onClick={() => this.handleClick()}>
+                  <img src={linkSVG} />
+                </RoundButton>
+                <ButtonsOverlay toggle={this.state.toggle}></ButtonsOverlay>
                 <div>
                   <StyledButton href='https://w3docs.com' >GITHUB</StyledButton>
                   <StyledButton href='https://w3docs.com' >PROFIL 42</StyledButton>

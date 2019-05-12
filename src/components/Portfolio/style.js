@@ -1,6 +1,37 @@
 import styled from '@emotion/styled'
 import { css, keyframes } from '@emotion/core'
 
+const appear = keyframes`
+  0% { opacity: 0}
+  100% { opacity: 1}
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  ${({ open }) => open && css`
+    display: block;
+    animation: ${appear} 0.5s forwards;
+  `}
+  & > div {
+    z-index: 100;
+    padding: 5vw;
+    position: fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+`
+
 const slideIn = keyframes`
   from {
     transform: translate3d(-4000px, 0, 0);
@@ -109,7 +140,7 @@ const PortfolioStyle = styled.div`
             right: 0;
           }
           flex: 0.2 1 auto;
-          background-color: white;
+          /* background-color: white; */
         }
       }
     }

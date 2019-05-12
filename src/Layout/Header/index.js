@@ -33,13 +33,13 @@ class Header extends React.Component {
 
   render () {
     return (
-      <HeaderStyle fixed={this.state.fixed}>
+      <HeaderStyle id="header" fixed={this.state.fixed}>
         <h1>
           <Link to="/">
             {this.props.title}
           </Link>
         </h1>
-        <Link to="/">V</Link>
+        <a onClick={() => { this.state.fixed ? window.scrollTo(0, 0) : window.scrollTo(0, document.body.scrollHeight) }}>V</a>
       </HeaderStyle>
     )
   }
