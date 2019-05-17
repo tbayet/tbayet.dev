@@ -145,6 +145,7 @@ const FooterStyle = styled.footer`
   right: 0;
   left: 0;
   & > .footer_container {
+    overflow: hidden;
     position: relative;
     margin-top: -200px;
     height: 200px;

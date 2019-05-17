@@ -5,9 +5,9 @@ export const ModalContentStyle = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 60vw;
-  & p {
+  & p, & li {
     font-family: ${({ theme }) => theme.fontContent.primary};
-    font-size: 1.3rem;
+    font-size: calc(0.6rem + 0.3vw);
   }
 `
 
