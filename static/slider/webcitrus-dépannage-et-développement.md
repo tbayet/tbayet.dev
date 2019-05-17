@@ -2,7 +2,7 @@
 dateFrom: 2012-09-02T22:00:00.000Z
 dateTo: 2013-09-01T22:00:00.000Z
 title: WebCitrus - Troubleshooting and Development
-picture: ../../src/images/slider/webcitrus.png
+picture: ../../src/images/uploads/webcitrus.png
 ---
 Business project with a friend in Dijon
 

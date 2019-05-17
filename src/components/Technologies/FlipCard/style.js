@@ -21,7 +21,7 @@ const FlipCardStyle = styled.div`
   }
   .card_front {
     overflow: hidden;
-    z-index: 2;
+    z-index: ${({ flip }) => flip ? 0 : 1};
     display: flex;
     flex: 1 1 auto;
     background-color: ${({ theme }) => theme.primaryColorHover};
@@ -41,7 +41,7 @@ const FlipCardStyle = styled.div`
       margin-top: -20%;
       background-color: white;
       mask: url(${({ icon }) => icon}) no-repeat center;
-      mask-size: 100% 100%;
+      mask-size: contain;
     }
   }
   .card_back {

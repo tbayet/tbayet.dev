@@ -44,6 +44,7 @@ const close = keyframes`
 
 export const ButtonsOverlay = styled.div`
   position: absolute;
+  z-index: 1;
   left: 0;
   top: 0;
   bottom: 0;

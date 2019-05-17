@@ -1,7 +1,13 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 
-const ModalStyle = styled.div`
+export const ModalContentStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60vw;
+`
+
+const ModalTriggerStyle = styled.div`
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -36,4 +42,4 @@ const ModalStyle = styled.div`
   }
 `
 
-export default ModalStyle
+export default ModalTriggerStyle

@@ -2,7 +2,7 @@
 dateFrom: 2019-03-03T16:53:48.880Z
 dateTo: 2019-08-30T15:53:48.892Z
 title: VPTech \ Lab42
-picture: ../../src/images/slider/vptech.jpg
+picture: ../../src/images/uploads/vptech.jpg
 ---
 **Part-time Internship**
 

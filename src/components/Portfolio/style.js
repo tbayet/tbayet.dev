@@ -24,7 +24,6 @@ export const Modal = styled.div`
     padding: 5vw;
     position: fixed;
     background: white;
-    width: 80%;
     height: auto;
     top:50%;
     left:50%;
@@ -70,7 +69,8 @@ const PortfolioStyle = styled.div`
   & > .table_top {
     flex: 0 0 100%;
     height: 300px;
-    background:  linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 1%, rgba(0,0,0,0.0) 100%);
+    min-height: 300px;
+    background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 1%, rgba(0,0,0,0.0) 100%);
   }
   & > .table_layer {
     background-color: #8c8c8c;

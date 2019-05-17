@@ -5,6 +5,7 @@ module.exports = {
     author: `@tbayet`
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     // Images queries
     {

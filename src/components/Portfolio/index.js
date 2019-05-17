@@ -1,7 +1,9 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import PortfolioStyle, { Modal } from './style'
-import ModalTrigger from './Modal'
+import ModalTrigger, { ModalContent } from './Modal'
+import Projects from './Projects'
+import School from './School'
 
 class Portfolio extends React.Component {
   constructor (props) {
@@ -18,10 +20,13 @@ class Portfolio extends React.Component {
   componentWillUnmount () {
     window.removeEventListener('scroll', this.handleScroll)
   }
-  handleClick (e) {
-    this.setState({
-      modalOpen: !this.state.modalOpen
-    })
+  handleClick (i) {
+    return () => {
+      this.setState({
+        modalOpen: !this.state.modalOpen,
+        modalContent: i
+      })
+    }
   }
   handleScroll (e) {
     const currentTop = window.scrollY
@@ -42,39 +47,60 @@ class Portfolio extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            IMGwood: file(relativePath: { eq: "wood-pattern.png" }) {
-              publicURL
-            },
-            IMGastro: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-              childImageSharp {
-                fluid(maxWidth: 1080) {
-                  ...GatsbyImageSharpFluid
+            portfolio: allMarkdownRemark (filter: { fileAbsolutePath: { regex : "/static\/portfolio/" } }) {
+              edges {
+                node {
+                  html
+                  frontmatter {
+                    picture {
+                      childImageSharp {
+                        fluid(maxWidth: 1920) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                  }
                 }
               }
+            },
+            IMGwood: file(relativePath: { eq: "wood-pattern.png" }) {
+              publicURL
             },
             transitionBackground: file(relativePath: { eq: "transition-background.svg" }) {
               publicURL
             }
           }
         `}
-        render={({ IMGwood: { publicURL }, IMGastro: { childImageSharp }, transitionBackground }) =>
-          <PortfolioStyle background={publicURL} animating={this.state.animating} transitionBackground={transitionBackground.publicURL}>
+        render={({ portfolio: { edges }, transitionBackground }) =>
+          <PortfolioStyle animating={this.state.animating} transitionBackground={transitionBackground.publicURL}>
             <div className="table_top"></div>
             <div className="table_layer">
               <div ref={this.myRef} className="table_stair">
                 <div >
-                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick} className="element"><ModalTrigger img={childImageSharp.fluid}></ModalTrigger></div>
+                  {
+                    edges.map((elem, index) =>
+                      <div onClick={this.handleClick(index)} className="element">
+                        <ModalTrigger img={elem.node.frontmatter.picture.childImageSharp.fluid}></ModalTrigger>
+                      </div>
+                    )
+                  }
+                  {/* <div onClick={this.handleClick(0)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick(1)} className="element"><ModalTrigger img={edges[1].node.childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick(2)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div>
+                  <div onClick={this.handleClick(3)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div> */}
                 </div>
               </div>
             </div>
             <div className="table_end"></div>
-            <Modal onClick={this.handleClick} open={this.state.modalOpen}>
+            <Modal onClick={this.handleClick(0)} open={this.state.modalOpen}>
               <div onClick={(e) => e.stopPropagation()}>
-                {/* {portfolio[this.state.modalContent]} */}
-                HELLOOOOOOO
+                {
+                  edges.length &&
+                  <ModalContent
+                    image={edges[this.state.modalContent].node.frontmatter.picture.childImageSharp.fluid}
+                    text={edges[this.state.modalContent].node.html}
+                  />
+                }
               </div>
             </Modal>
           </PortfolioStyle>
