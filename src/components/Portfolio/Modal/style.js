@@ -5,6 +5,10 @@ export const ModalContentStyle = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 60vw;
+  & p {
+    font-family: ${({ theme }) => theme.fontContent.primary};
+    font-size: 1.3rem;
+  }
 `
 
 const ModalTriggerStyle = styled.div`

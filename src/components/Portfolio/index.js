@@ -2,8 +2,6 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import PortfolioStyle, { Modal } from './style'
 import ModalTrigger, { ModalContent } from './Modal'
-import Projects from './Projects'
-import School from './School'
 
 class Portfolio extends React.Component {
   constructor (props) {
@@ -79,15 +77,11 @@ class Portfolio extends React.Component {
                 <div >
                   {
                     edges.map((elem, index) =>
-                      <div onClick={this.handleClick(index)} className="element">
+                      <div key={'trig-' + index} onClick={this.handleClick(index)} className="element">
                         <ModalTrigger img={elem.node.frontmatter.picture.childImageSharp.fluid}></ModalTrigger>
                       </div>
                     )
                   }
-                  {/* <div onClick={this.handleClick(0)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick(1)} className="element"><ModalTrigger img={edges[1].node.childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick(2)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div>
-                  <div onClick={this.handleClick(3)} className="element"><ModalTrigger img={edges[0].node.childImageSharp.fluid}></ModalTrigger></div> */}
                 </div>
               </div>
             </div>
