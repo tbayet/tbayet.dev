@@ -10,7 +10,7 @@ public_folder: src/images/uploads
 collections:
   - name: slider
     label: Slider
-    folder: static/slider
+    folder: static/slider/
     create: true
     fields:
       - { name: dateFrom, label: date From, widget: date }
@@ -21,8 +21,9 @@ collections:
 
   - name: portfolio
     label: Portfolio
-    folder: static/portfolio
+    folder: static/portfolio/
     create: true
     fields:
+      - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
       - { name: "picture", label: "Featured Image", widget: "image", allow_multiple: false }
