@@ -21,12 +21,12 @@ export const Modal = styled.div`
   `}
   & > div {
     z-index: 100;
-    padding: 5vw;
+    /* padding: 5vw; */
     position: fixed;
-    background: white;
+    background-color: white;
     height: auto;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%,-50%);
   }
 `

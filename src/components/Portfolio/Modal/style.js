@@ -1,13 +1,24 @@
 import styled from '@emotion/styled'
 
 export const ModalContentStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 60vw;
+  position: relative;
+  width: calc(300px + 30vw);
+  max-width: 90vw;
+  height: calc(400px + 40vh);
+  max-height: 90vh;
   & p, & li {
     font-family: ${({ theme }) => theme.fontContent.primary};
-    font-size: calc(0.6rem + 0.3vw);
+    font-size: calc(0.6rem + 0.4vw);
+  }
+  & > div:last-of-type {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.98);
+    padding-left: 2vw;
+    padding-right: 2vw;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-top: solid 3px black;
   }
 `
 

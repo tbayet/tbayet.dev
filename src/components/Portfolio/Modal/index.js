@@ -6,7 +6,7 @@ import ModalTriggerStyle, { ModalContentStyle } from './style'
 
 export const ModalContent = ({ image, text }) =>
   <ModalContentStyle>
-    <Img style={{ width: '70vw', maxHeight: '60vh' }} imgStyle={{ objectFit: 'contain' }} fluid={image}/>
+    <Img style={{ width: '100%', height: '100%' }} imgStyle={{ objectFit: 'cover' }} fluid={image}/>
     <div dangerouslySetInnerHTML={{ __html: text }}></div>
   </ModalContentStyle>
 
