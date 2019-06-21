@@ -23,23 +23,10 @@ const TechnologiesStyle = styled.div`
     background-size: cover;
     background-attachment: fixed;
     transition: flex 0.2s linear;
-    ${({ video }) => video && css`
+    ${({ hiddenMusic }) => hiddenMusic && css`
       flex: 0 0 0;
       padding: 0;
     `}
-  }
-  & .mac_video {
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    & > video {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
   }
 
   & .card {

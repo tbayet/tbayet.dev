@@ -86,7 +86,7 @@ export const RoundButton = styled.button`
 `
 
 export const StyledButton = styled.a`
-  font-family: ${({ theme }) => theme.fontContent.secondary};
+  font-family: ${({ theme }) => theme.fontContent.primary};
   text-decoration: none;
   display: inline-flex;
   background-color: rgba(255, 255, 255, 0.2);
@@ -141,7 +141,6 @@ const FooterStyle = styled.footer`
   position: absolute;
   background-color: ${({ theme }) => theme.primaryColor};
   color: ${({ theme }) => theme.primaryColor};
-  font: ${({ theme }) => theme.fontPrimary.bold};
   right: 0;
   left: 0;
   & > .footer_container {

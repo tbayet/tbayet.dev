@@ -18,7 +18,11 @@ export const ModalContentStyle = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    border-top: solid 3px black;
+    background-color: ${({ theme }) => theme.primaryColor};
+    color: ${({ theme }) => theme.backgroundColor};
+    & a:visited {
+      color: ${({ theme }) => theme.backgroundColor};
+    }
   }
 `
 
