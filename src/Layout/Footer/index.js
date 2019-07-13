@@ -37,7 +37,6 @@ class Footer extends React.Component {
                 <div>
                   <StyledButton href='https://github.com/tbayet' >GITHUB</StyledButton>
                   <StyledButton href='https://companies.intra.42.fr/resumes/LVafEJCf' >PROFIL 42</StyledButton>
-                  <StyledButton href='#' >MALT</StyledButton>
                   <StyledButton href='mailto:bayet.thomas@gmail.com' >EMAIL</StyledButton>
                   <StyledButton href='https://www.linkedin.com/in/tbayet' > LINKEDIN </StyledButton>
                 </div>

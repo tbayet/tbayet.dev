@@ -47,8 +47,8 @@ class Profil extends React.Component {
               </div>
               <div id="profile_presentation">
                 <FadeIn slow>
-                  "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another IT cursus. I'm now looking to manage my own activity in addition to a part-time contract. I need you to choose me for your next freelance needs, in order to help me
-                  finance my future music jam session houseboat ! ""
+                  "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another 2 years IT cursus.
+                   I'm now looking for a motivating part-time contract where i will be able to extend my knowledge and keep me up-to-date with new technologies in web development.""
                 </FadeIn>
               </div>
             </ProfilStyle>

@@ -10,7 +10,7 @@
     "name": "CSS"
   },
   {
-    "note": [4.5, 4, 5],
+    "note": [4, 4, 5],
     "icon": "react",
     "name": "React"
   },
@@ -20,12 +20,12 @@
     "name": "Vue"
   },
   {
-    "note": [4, 3.5, 4.5],
+    "note": [3.5, 3.5, 4],
     "icon": "nodejs",
     "name": "Node"
   },
   {
-    "note": [3, 5, 4.5],
+    "note": [3.5, 4.5, 4.5],
     "icon": "git",
     "name": "Git"
   },
@@ -35,12 +35,12 @@
     "name": "MySQL"
   },
   {
-    "note": [4.5, 3, 4],
+    "note": [4, 2, 4],
     "icon": "redux",
     "name": "Redux"
   },
   {
-    "note": [4, 3.5, 4.5],
+    "note": [3.5, 3.5, 4.5],
     "icon": "python",
     "name": "Python"
   },
