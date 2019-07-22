@@ -25,6 +25,18 @@ const HeaderStyle = styled.header`
     color: ${({ theme, fixed }) => fixed ? theme.primaryColor : theme.onPrimary};
     transition: color 1.5s, transform 1s;
   }
+  & a#downloadPDF {
+      background-color: ${({ theme, fixed }) => fixed ? theme.onPrimary : theme.primaryColor};
+      border: solid 1px ${({ theme, fixed }) => fixed ? theme.primaryColor : theme.onPrimary};
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: color 0.5s, background-color 0.5s;
+      &:hover {
+        background-color: ${({ theme, fixed }) => fixed ? theme.primaryColor : theme.onPrimary};
+        color: ${({ theme, fixed }) => fixed ? theme.onPrimary : theme.primaryColor};        
+      }
+    }
   & > *:last-child {
     display: inline-flex;
     height: 40px;

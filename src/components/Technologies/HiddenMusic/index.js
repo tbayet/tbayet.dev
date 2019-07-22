@@ -33,7 +33,7 @@ class HiddenMusic extends React.Component {
               <p>I'm also a musician, self-educated multi-instrumentist.
                  I play with the band Hitzak as a percussionnist, and compose
                   some accoustic guitar based music and electronic MAO.</p>
-              <iframe src="https://www.youtube-nocookie.com/embed/oyZBT1Wl1Dg?start=133" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube-nocookie.com/embed/oyZBT1Wl1Dg?start=133" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
             </HitzakStyle>
             <MAOStyle selected={this.state.selected}>

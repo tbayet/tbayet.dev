@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HeaderStyle from './style'
 import theme from '../../theme'
+import pdf from '../../images/CV-Thomas_Bayet.pdf'
 
 class Header extends React.Component {
   constructor (props) {
@@ -39,6 +40,7 @@ class Header extends React.Component {
             {this.props.title}
           </Link>
         </h1>
+        <a href={pdf} id="downloadPDF">PDF CV</a>
         <a onClick={() => { this.state.fixed ? window.scrollTo(0, 0) : window.scrollTo(0, document.body.scrollHeight) }}>V</a>
       </HeaderStyle>
     )

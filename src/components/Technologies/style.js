@@ -73,8 +73,8 @@ const TechnologiesStyle = styled.div`
   }
   & #mac_foot {
     z-index: 0;
-    margin-left: 32vw;
-    margin-right: 32vw;
+    margin-left: 36%;
+    margin-right: 36%;
     margin-bottom: 10px;
     height: 0px;
     border-top: 5px solid #404040;
@@ -118,6 +118,9 @@ const TechnologiesStyle = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.lg}) {
     & #mac_screen {
       min-height: 800px;
+    }
+    & #mac_container {
+      max-width: 1800px;
     }
   }
   /* tablet */
