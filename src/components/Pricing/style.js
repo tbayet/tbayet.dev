@@ -15,7 +15,7 @@ const PricingStyle = styled.div`
     width: 60vw;
     & > table {
       width: 60vw;
-      font-size: calc(0.5vw + 10px);;
+      font-size: calc(0.5vw + 10px);
       text-align: center;
       border: solid 3px ${({ theme }) => theme.primaryColorActive};
       border-collapse: collapse;

@@ -6,6 +6,7 @@ import Profil from '../components/Profil'
 import Technologies from '../components/Technologies'
 import Portfolio from '../components/Portfolio'
 import Pricing from '../components/Pricing'
+import Personality from '../components/Personality'
 import History from '../components/History'
 
 const IndexPage = () => (
@@ -16,6 +17,7 @@ const IndexPage = () => (
     <Portfolio />
     {/* <Pricing /> */}
     <History />
+    <Personality />
   </Layout>
 )
 

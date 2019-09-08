@@ -39,7 +39,7 @@ class Profil extends React.Component {
               <div>
                 <div id="profile_description">
                   <h2>Web Developper</h2>
-                  <h3><FadeIn>Front-end Javascript - Freelance</FadeIn></h3>
+                  <h3><FadeIn>Front-end Javascript</FadeIn></h3>
                 </div>
                 <div id="profile_picture">
                   <Img imgStyle={{ objectPosition: '100% 0%', objectFit: 'contain' }} style={{ height: '100%' }} fluid={ placeholderImage.childImageSharp.fluid } />
@@ -48,9 +48,9 @@ class Profil extends React.Component {
               <div id="profile_presentation">
                 <FadeIn slow>
                   "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another 2 years IT cursus.
-                   I have developped my skills in teamwork, technologies purpose comprehension, autonomy and self-education, extending my knowledges' scope.
+                   I have developped my skills in teamwork, technologies purpose comprehension, autonomy and self-education, constantly reworking the scope of possibilities for my future.
                    In my work, I try as much as possible to be clear, inclusive, to anticipate wrong usage possibilities and maintenability.
-                   I'm now looking for a motivating part-time contract where i will be able to extend my knowledge and keep me up-to-date with new technologies in web development.""
+                   I'm now looking for a motivating an modern contract where i will be able to extend my knowledge and keep me up-to-date with new technologies in web (and mobile) development.""
                 </FadeIn>
               </div>
             </ProfilStyle>
