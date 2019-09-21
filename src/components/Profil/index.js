@@ -47,10 +47,18 @@ class Profil extends React.Component {
               </div>
               <div id="profile_presentation">
                 <FadeIn slow>
-                  "" Hi ! I'm Thomas, 28 years young ! I grew up in France where i learned to code during my studies at 42_Born2Code school after another 2 years IT cursus.
-                   I have developped my skills in teamwork, technologies purpose comprehension, autonomy and self-education, constantly reworking the scope of possibilities for my future.
-                   In my work, I try as much as possible to be clear, inclusive, to anticipate wrong usage possibilities and maintenability.
-                   I'm now looking for a motivating an modern contract where i will be able to extend my knowledge and keep me up-to-date with new technologies in web (and mobile) development.""
+                  <h2>I'M LOOKING FOR A CONTRACT WHERE:</h2>
+                  <ul>
+                    <li>i'll work in a team, including communication, peer-learning, friendship</li>
+                    <li>there is no "you are too Junior": You already know i'm Junior, your target should be to look for someone you really want to work with and trust, it's a long term contract and i'll learn fast</li>
+                    <li>my role can expand: not beeing confined to one job, one techno, having the possibility to enlarge the scope of my work and knowledge</li>
+                    <li>my team can be flexible: schedule is great for cohesion, but should be more scalable - in both ways - to maximize the productivity and show consideration for the Human aspect</li>
+                    <li>we will meet outside: group spirit and afterworks are required, for more complicity, more social links, and knowing our collaborators</li>
+                    <li>we all follow the best practices: code reviews, optimization, justified unit tests, git specs, maintainability aims</li>
+                    <li>we are not afraid of trying, upgrading and taking new directions</li>
+                    <li>i will not feel to have a boss but a leader</li>
+                    <li>"Disruptif" is not just a meaningless/unambitious keyword that paradoxically everyone use</li>
+                  </ul>
                 </FadeIn>
               </div>
             </ProfilStyle>

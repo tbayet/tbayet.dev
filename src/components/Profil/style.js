@@ -82,9 +82,12 @@ const ProfilStyle = styled.div`
     margin-top: 100px;
     margin-left: 20%;
     margin-right: 20%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-size: ${({ theme }) => theme.font14};
     width: 50%;
+    & li {
+      margin-top: 15px;
+    }
   }
 `
 
