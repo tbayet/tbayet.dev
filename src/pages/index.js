@@ -8,11 +8,13 @@ import Portfolio from '../components/Portfolio'
 import Pricing from '../components/Pricing'
 import Personality from '../components/Personality'
 import History from '../components/History'
+import Roadmap from '../components/Roadmap'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`thomas`, `bayet`, `react`, `vue`, `js`, `front`, `font-end`, `developper`, `freelance`, `javascript`]} />
     <Profil />
+    <Roadmap />
     <Technologies />
     <Portfolio />
     {/* <Pricing /> */}
